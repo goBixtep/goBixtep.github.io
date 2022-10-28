@@ -23,11 +23,6 @@
             window.close();
         })
     </script>
-    curl --request POST \
-    --url https://api.tosspayments.com/v1/payments/confirm \
-    --header 'Authorization: Basic dGVzdF9za196WExrS0V5cE5BcldtbzUwblgzbG1lYXhZRzVSOg==' \
-    --header 'Content-Type: application/json' \
-    --data '{"paymentKey":${paymentKey},"amount":${amount},"orderId":${orderId}}'
 </body>
 
 </html>
