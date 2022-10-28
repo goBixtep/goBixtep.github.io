@@ -13,12 +13,21 @@
     <button id="returnToApp">확인</button>
 
     <script>
-        var button = document.getElementById('returnToApp')
+        var para = document.location.href.split("?");
+        var orderId = para.getElementById("orderId").value;
+        var paymentKey = para.getElementById("orderId").value;
+        var amount = para.getElementById("orderId").value;
 
+        var button = document.getElementById('returnToApp')
         button.addEventListener('click', function () {
             window.close();
         })
     </script>
+    curl --request POST \
+    --url https://api.tosspayments.com/v1/payments/confirm \
+    --header 'Authorization: Basic dGVzdF9za196WExrS0V5cE5BcldtbzUwblgzbG1lYXhZRzVSOg==' \
+    --header 'Content-Type: application/json' \
+    --data '{"paymentKey":${paymentKey},"amount":${amount},"orderId":${orderId}}'
 </body>
 
 </html>
