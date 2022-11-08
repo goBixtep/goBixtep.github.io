@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
   <head>
     <script src="https://js.tosspayments.com/v1/payment"></script>
   </head>
@@ -25,4 +25,24 @@
       })
     </script>
   </body>
-</html>
+</html> -->
+
+
+<html>
+      <head>
+   <script src="https://js.tosspayments.com/v1"></script>
+   </head>
+   <body>
+   <script>
+   var tossPayments = TossPayments('test_ck_OEP59LybZ8Bdv6A1JxkV6GYo7pRe')
+   tossPayments.requestPayment('카드', {
+   amount: ${request.amount},
+   orderId: '${request.orderId}',
+   orderName: '${request.orderName}',
+   customerName: '${request.customerName}',
+   successUrl: window.location.origin + '/success',
+   failUrl: window.location.origin + '/fail',
+   })
+   </script>
+   </body>
+   </html>
